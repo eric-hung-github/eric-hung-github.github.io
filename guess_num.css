@@ -1,10 +1,10 @@
 #play_area{
-    height: 90%;
+    height: 100%;
     margin: 25px;
 }
 #input_area{
     height: 40%;
-    margin: 3em;
+    margin: 1em;
 }
 #output_area{
     height: 10%;
@@ -62,11 +62,9 @@
 }
 
 html{
-    background-color: black;
+    background-color: ivory;
 }
 body{
     height: 100%;
 }
-div{
-    color: ivory;
-}
+

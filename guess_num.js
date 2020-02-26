@@ -25,6 +25,7 @@ function addDiv_in_outputlist(parent, outputchar) {
 var correct_ans = ['0', '3', '1', '5']
 var now_ans = []
 
+
 function now_ans_show() {
     for (let i = 0; i < outnum.length; i++) {
         outnum[i].textContent = "";
@@ -32,6 +33,16 @@ function now_ans_show() {
 
     for (let i = 0; i < now_ans.length; i++) {
         outnum[i].textContent = now_ans[i];
+    }
+}
+
+function num_colorchange(){
+    for (i = 0; i < num_but.length; i++) {
+        if(now_ans.includes(num_but.textContent)){
+            num_but[i].style.color="white"
+        }else{
+            num_but[i].style.color="ivory"
+        }
     }
 }
 
@@ -63,12 +74,13 @@ function click_submit() {
         addDiv_outputlist(outputlist, outputlist_parement);
         now_ans = []
         now_ans_show()
+        num_colorchange()
     }
 }
 function click_delete() {
     now_ans.pop()
     now_ans_show()
-
+    num_colorchange()
 }
 function click_num(e) {
     if (now_ans.length < 4) {
@@ -78,8 +90,7 @@ function click_num(e) {
         console.log("over")
     }
     now_ans_show()
-
-    //console.log(now_ans)
+    num_colorchange()
 }
 
 var outputlist = document.getElementById("outputlist");
