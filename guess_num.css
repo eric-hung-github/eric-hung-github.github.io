@@ -64,6 +64,9 @@
 html{
     background-color: black;
 }
+body{
+    height: 100%;
+}
 div{
     color: ivory;
 }
