@@ -1,0 +1,69 @@
+#play_area{
+    height: 2000px;
+    margin: 25px;
+}
+#input_area{
+    height: 40%;
+    margin: 3em;
+}
+#output_area{
+    height: 10%;
+    margin: auto;
+    border: 5px solid burlywood;
+}
+#outputlist_area{
+    height: 50%;
+}
+#outputlist{
+    height: 100%;
+    width: 95%;
+    margin: 0 auto ;
+    overflow: auto;
+}
+
+#input_table{
+    height: 100%;
+    width: 100%;
+}
+
+.input_click{
+    border-radius: 50%;
+    margin: auto;
+    width: 150px;
+    height:150px;
+    background-color: bisque;
+    font-size: 72px;
+    text-align: center;
+}
+#delete_but{
+    border-radius: 50%;
+    margin: auto;
+    width: 150px;
+    height:150px;
+    background-color: bisque;
+    font-size: 72px;
+    text-align: center;
+}
+#submit_but{
+    border-radius: 50%;
+    margin: auto;
+    width: 150px;
+    height:150px;
+    background-color: bisque;
+    font-size: 72px;
+    text-align: center;
+}
+.outnum{ 
+    height: 90%;
+    width: 25%;
+    float: left;
+    font-size: 108px;
+    text-align: center;
+}
+
+html{
+    background-color: black;
+}
+div{
+    color: ivory;
+}
