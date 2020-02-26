@@ -26,13 +26,10 @@ var correct_ans = ['0', '3', '1', '5']
 var now_ans = []
 
 function now_ans_show() {
-    
-    if(now_ans.length==0){
-        console.log(now_ans)
-        for (let i = 0; i <outnum.length; i++) {
-            outnum[i].textContent = "";
-        }
+    for (let i = 0; i < outnum.length; i++) {
+        outnum[i].textContent = "";
     }
+
     for (let i = 0; i < now_ans.length; i++) {
         outnum[i].textContent = now_ans[i];
     }
@@ -53,23 +50,24 @@ function compare() {
 }
 
 function click_submit() {
-    if (now_ans.length = 4) {
+    if (now_ans.length == 4) {
         var compare_result = compare()
 
         let outputlist_parement = [];
-        outputlist_parement=outputlist_parement.concat(now_ans);
-        
-        outputlist_parement.push( ' ', ' ',compare_result[0],'A',compare_result[1],"B")
-        if(compare_result[0]==4){
+        outputlist_parement = outputlist_parement.concat(now_ans);
+
+        outputlist_parement.push(' ', ' ', compare_result[0], 'A', compare_result[1], "B")
+        if (compare_result[0] == 4) {
             alert("BINGO!!!");
         }
-        addDiv_outputlist(outputlist,outputlist_parement);
+        addDiv_outputlist(outputlist, outputlist_parement);
+        now_ans = []
+        now_ans_show()
     }
-
-    now_ans=[]
-    now_ans_show()
 }
 function click_delete() {
+    now_ans.pop()
+    now_ans_show()
 
 }
 function click_num(e) {
@@ -91,4 +89,4 @@ for (i = 0; i < num_but.length; i++) {
     num_but[i].addEventListener("click", click_num, false);
 }
 document.getElementById("submit_but").addEventListener("click", click_submit, false);
-document.getElementById("delete_but").addEventListener("click", click_submit, false);
+document.getElementById("delete_but").addEventListener("click", click_delete, false);
