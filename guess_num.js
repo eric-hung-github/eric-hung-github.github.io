@@ -20,6 +20,7 @@ function addDiv_in_outputlist(parent, outputchar) {
     newindiv.style.float = "left"
     newindiv.style.fontSize = "108px"
     newindiv.style.textAlign = "center"
+    newindiv.style.color="burlywood"
 }
 
 var correct_ans = ['0', '3', '1', '5']
@@ -38,7 +39,7 @@ function now_ans_show() {
 
 function num_colorchange(){
     for (i = 0; i < num_but.length; i++) {
-        console.log(now_ans.includes(num_but[i].textContent))
+        //console.log(now_ans.includes(num_but[i].textContent))
         if(now_ans.includes(num_but[i].textContent)){
             num_but[i].style.background="burlywood"
         }else{

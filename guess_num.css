@@ -32,8 +32,10 @@
     width: 150px;
     height:150px;
     background-color: bisque;
+    color: rgb(110, 78, 17);
     font-size: 72px;
     text-align: center;
+    line-height:150px;
 }
 #delete_but{
     border-radius: 50%;
@@ -41,8 +43,10 @@
     width: 150px;
     height:150px;
     background-color: bisque;
+    color: rgb(110, 78, 17);
     font-size:60px;
     text-align: center;
+    line-height:150px;
 }
 #submit_but{
     border-radius: 50%;
@@ -50,19 +54,23 @@
     width: 150px;
     height:150px;
     background-color: bisque;
+    color: rgb(110, 78, 17);
     font-size: 60px;
     text-align: center;
+    line-height:150px;
 }
 .outnum{ 
-    height:  20vw;
-    width: 20vw;
+    height:  200px;
+    width: 200px;
+    margin: auto;
     float: left;
-    margin: 0.25vw;
     font-size: 108px;
     text-align: center;
     border-radius: 50%;
     border-color: bisque;
+    color: rgb(110, 78, 17);
     border: 1.25vw solid burlywood;
+    line-height:200px;
 }
 
 html{
