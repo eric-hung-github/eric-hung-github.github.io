@@ -38,10 +38,11 @@ function now_ans_show() {
 
 function num_colorchange(){
     for (i = 0; i < num_but.length; i++) {
-        if(now_ans.includes(num_but.textContent)){
-            num_but[i].style.color="white"
+        console.log(now_ans.includes(num_but[i].textContent))
+        if(now_ans.includes(num_but[i].textContent)){
+            num_but[i].style.background="burlywood"
         }else{
-            num_but[i].style.color="ivory"
+            num_but[i].style.background="bisque"
         }
     }
 }

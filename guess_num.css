@@ -9,7 +9,7 @@
 #output_area{
     height: 10%;
     margin: auto;
-    border: 5px solid burlywood;
+    padding: auto;
 }
 #outputlist_area{
     height: 50%;
@@ -41,7 +41,7 @@
     width: 150px;
     height:150px;
     background-color: bisque;
-    font-size: 72px;
+    font-size:60px;
     text-align: center;
 }
 #submit_but{
@@ -50,15 +50,19 @@
     width: 150px;
     height:150px;
     background-color: bisque;
-    font-size: 72px;
+    font-size: 60px;
     text-align: center;
 }
 .outnum{ 
-    height: 90%;
-    width: 25%;
+    height:  20vw;
+    width: 20vw;
     float: left;
+    margin: 0.25vw;
     font-size: 108px;
     text-align: center;
+    border-radius: 50%;
+    border-color: bisque;
+    border: 1.25vw solid burlywood;
 }
 
 html{
