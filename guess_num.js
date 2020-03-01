@@ -71,7 +71,7 @@ function click_submit() {
 
         outputlist_parement.push(' ', ' ', compare_result[0], 'A', compare_result[1], "B")
         if (compare_result[0] == 4) {
-            alert("BINGO!!!");
+            alert("答對惹!!!");
         }
         addDiv_outputlist(outputlist, outputlist_parement);
         now_ans = []
