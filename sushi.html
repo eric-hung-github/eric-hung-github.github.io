@@ -1,0 +1,72 @@
+
+<html>
+    <head>
+        <meta charset='utf8'>
+        <script>
+
+        </script>
+        <style>
+          .main {
+              height: 125%;
+              width: 100%;
+              display: table;
+          }
+          .wrapper {
+              display: table-cell;
+              height: 100%;
+              vertical-align: middle;
+          }
+        </style>
+        
+    </head>
+    <body>
+        <div class='main'>
+          <div class='wrapper'>
+            <div id='ruffle' align="center" width=480 height=360></div>
+            <div align="center" >
+                <button onclick="openFullscreen()">Full Screen!!</button>
+            </div>
+          </div>
+        </div>
+        
+    </body>
+    <script src="js/ruffle.js"></script>
+    <script>
+
+        
+        /* When the openFullscreen() function is executed, open the video in fullscreen.
+        Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
+        function openFullscreen() {
+          if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+          } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+          }
+        }
+
+        var swfobject = {};
+        var elem
+
+        swfobject.embedSWF = function(url, cont){
+            container=document.getElementById(cont)
+            containerStyle= window.getComputedStyle(container);
+
+            var ruffle = window.RufflePlayer.newest(),
+                player = Object.assign(container.appendChild(ruffle.createPlayer()), {
+                    width: containerStyle.width,
+                    height: containerStyle.height,
+                });
+
+            player.load({ url: url });
+
+            elem = player
+        }
+
+        swfobject.embedSWF('https://school-project-teach-website.s3.ap-southeast-1.amazonaws.com/sushi.swf', 'ruffle');
+        // openFullscreen()
+    </script>
+
+
+</html>
