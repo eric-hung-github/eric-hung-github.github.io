@@ -38,16 +38,24 @@
 
   function embedSWF(url, cont) {
     container = document.getElementById(cont)
-    containerStyle = window.getComputedStyle(container)
 
     let ruffle = window.RufflePlayer.newest()
     let player = Object.assign(container.appendChild(ruffle.createPlayer()))
 
     player.load({ url: url })
 
+    var width = player.offsetWidth
+    var height = player.offsetHeight
+    var maxWidth = container.offsetWidth
+    var maxHeight = container.offsetHeight
 
-    player.style.height = containerStyle.height
-    player.style.width = containerStyle.width
+    var ratio = maxWidth / width;
+    if (height * ratio > maxHeight) {
+      ratio = maxHeight / height;
+    }
+
+    player.style.height = height * ratio
+    player.style.width = width * ratio
 
     return player
   }
