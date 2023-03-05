@@ -1,3 +1,5 @@
+{%load static %}
+
 <html>
 
 <head>
@@ -6,74 +8,55 @@
 
   </script>
   <style>
-    .main {
-      height: 100%;
-      width: 100%;
-    }
-
-    .wrapper {
-      height: 100%;
-      vertical-align: middle;
-    }
-    #ruffle {
+    #container {
       height: 90%;
-    }    
-    #btn {
-      height: 10%;
+      width: auto;
     }
   </style>
 
 </head>
 
 <body>
-  <div class='main'>
-    <div class='wrapper'>
-      <div id='ruffle' align="center"></div>
-      <div id='btn' align="center">
-        <button onclick="openFullscreen()">Full Screen!!</button>
-      </div>
-    </div>
+  <div id='container' align="center"></div>
+  <div align="center">
+    <button id='btn' onclick="openFullscreen()">Full Screen!!</button>
   </div>
 
 </body>
 <script src="../js/ruffle.js"></script>
 <script>
 
+  var player
 
-  /* When the openFullscreen() function is executed, open the video in fullscreen.
-  Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
   function openFullscreen() {
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
+    if (player.requestFullscreen) {
+      player.requestFullscreen();
     } else if (elem.webkitRequestFullscreen) { /* Safari */
-      elem.webkitRequestFullscreen();
+      player.webkitRequestFullscreen();
     } else if (elem.msRequestFullscreen) { /* IE11 */
-      elem.msRequestFullscreen();
+      player.msRequestFullscreen();
     }
   }
 
-  var swfobject = {};
-  var elem
-
-  swfobject.embedSWF = function (url, cont) {
+  function embedSWF(url, cont) {
     container = document.getElementById(cont)
     containerStyle = window.getComputedStyle(container)
-    console.log(containerStyle, containerStyle.width,
-      containerStyle.height,)
 
-    var ruffle = window.RufflePlayer.newest(),
-      player = Object.assign(container.appendChild(ruffle.createPlayer()), {
-        width: containerStyle.width,
-        height: containerStyle.height,
-      });
+    let ruffle = window.RufflePlayer.newest()
+    let player = Object.assign(container.appendChild(ruffle.createPlayer()))
 
-    player.load({ url: url });
+    player.load({ url: url })
 
-    elem = player
+
+    player.style.height = containerStyle.height
+    player.style.width = containerStyle.width
+
+    return player
   }
 
-  swfobject.embedSWF('../swf/sushi.swf', 'ruffle');
-  // openFullscreen()
+  player = embedSWF("../swf/sushi.swf", 'container');
+
+
 </script>
 
 
