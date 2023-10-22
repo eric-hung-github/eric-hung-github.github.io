@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <meta charset='utf8'>
+  <script>
+
+  </script>
+  <style>
+    #container {
+      height: 90%;
+      width: auto;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id='container' align="center"></div>
+  <div align="center">
+    <button id='btn' onclick="openFullscreen()">Full Screen!!</button>
+  </div>
+
+</body>
+<script src="../js/ruffle.js"></script>
+<script>
+
+  var player
+
+  function openFullscreen() {
+    if (player.requestFullscreen) {
+      player.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+      player.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+      player.msRequestFullscreen();
+    }
+  }
+
+  function embedSWF(url, cont) {
+    container = document.getElementById(cont)
+
+    let ruffle = window.RufflePlayer.newest()
+    let player = Object.assign(container.appendChild(ruffle.createPlayer()))
+
+    player.load({ url: url })
+
+    var width = player.offsetWidth
+    var height = player.offsetHeight
+    var maxWidth = container.offsetWidth
+    var maxHeight = container.offsetHeight
+
+    var ratio = maxWidth / width;
+    if (height * ratio > maxHeight) {
+      ratio = maxHeight / height;
+    }
+
+    player.style.height = height * ratio
+    player.style.width = width * ratio
+
+    return player
+  }
+
+  player = embedSWF("../swf/sushi.swf", 'container');
+
+
+</script>
+
+
+</html>
